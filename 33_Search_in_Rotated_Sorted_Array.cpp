@@ -84,7 +84,7 @@ public:
             else { // mid is not privot pos
                 //check mid is in A or B
                 if(nums[mid] < nums[left]){ // mid is in B
-                    if(target <= nums[nums.size() - 1]){
+                    if(target <= nums[right] && target > nums[mid]){
                         left = mid;
                         mid = (left + right) / 2;
                     }
@@ -94,7 +94,7 @@ public:
                     }
                 }
                 else { // mid is in A
-                    if(target <= nums[mid]){
+                    if(target <= nums[mid] && target >= nums[left]){
                         right = mid;
                         mid = (left + right) / 2;
                     }
