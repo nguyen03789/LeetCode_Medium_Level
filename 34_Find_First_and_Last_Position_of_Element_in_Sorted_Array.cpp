@@ -223,7 +223,7 @@ public:
             else {
                 right = mid - 1;
                 if (res[0] == -1) res[0] = mid;
-                else res[0] = (res[0] < mid) ? mid : res[0];
+                else res[0] = (res[0] > mid) ? mid : res[0];
             }
         }
         left = 0;
@@ -234,7 +234,7 @@ public:
             else if (nums[mid] < target) left = mid + 1;
             else {
                 left = mid + 1;
-                res[1] = (res[1] > mid) ? mid : res[1];
+                res[1] = (res[1] < mid) ? mid : res[1];
             }
         }
         return res;
